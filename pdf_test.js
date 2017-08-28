@@ -1,4 +1,5 @@
 import PDFDocument from 'pdfkit'
+import fs from 'fs'
 
 // Create a document
 const doc = new PDFDocument
