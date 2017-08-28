@@ -1,16 +1,15 @@
 import PDFDocument from 'pdfkit'
 import fs from 'fs'
+import addParagraph from './api/paragraph'
 
 // Create a document
 const doc = new PDFDocument
 
 // Pipe its output somewhere, like to a file or HTTP response
 // See below for browser usage
-doc.pipe
+doc.pipe(fs.createWriteStream('output.pdf'))
 
-console.log(doc.pipe, 'pipe')
-
-fs.createWriteStream('output.pdf')
+addParagraph(doc, 'Homo homini docus.')
 
 // Embed a font, set the font size, and render some text
 // doc.font('fonts/PalatinoBold.ttf')
