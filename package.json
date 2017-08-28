@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/bogdanned/winnie-the-pdf/issues"
   },
-  "homepage": "https://github.com/bogdanned/winnie-the-pdf#readme"
+  "homepage": "https://github.com/bogdanned/winnie-the-pdf#readme",
+  "dependencies": {
+    "pdfkit": "^0.8.3"
+  }
 }
