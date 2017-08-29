@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/bogdanned/winnie-the-pdf#readme",
   "dependencies": {
+    "express": "^4.15.4",
     "fs": "0.0.1-security",
     "pdfkit": "^0.8.3"
   },
