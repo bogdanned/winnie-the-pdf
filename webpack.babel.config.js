@@ -1,25 +1,10 @@
 import path from 'path'
 import webpack from 'webpack'
 import fs from "fs"
-import qs from 'querystring'
 import reloadable from "express-reloadable"
 import HtmlWebpackPlugin from "html-webpack-plugin"
-import CompressionWebpackPlugin from "compression-webpack-plugin"
-import AssetsPlugin from 'assets-webpack-plugin'
 
-const isDev = process.env.NODE_ENV === "development",
-      [host,port=80] = process.env.CDN_DOMAIN.split(":")
-
-const vendor = [
-  "react",
-  "react-dom",
-  "react-apollo",
-  "redux",
-  "react-redux",
-  "redux-first-router",
-  "history",
-  "recompose",
-]
+const isDev = true
 
 export default {
   devtool: isDev ? 'inline-source-map' : "hidden-source-map",
@@ -36,13 +21,11 @@ export default {
       `webpack-dev-server/client?https://${host}:${port}`,
       'webpack/hot/only-dev-server',
       path.join(__dirname, '/src/client/index.js')
-    ],
-    vendor
+    ]
   } : { app: [
     'babel-polyfill',
     path.join(__dirname, '/src/client/index.js')
-  ],
-  vendor
+  ]
 },
   output: {
     path: path.join(__dirname, "public"),
@@ -73,12 +56,7 @@ export default {
     },
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: "vendor",
-      minChunks: Infinity,
-    }),
     ...(isDev ? [new webpack.HotModuleReplacementPlugin()] : []),
-    new webpack.EnvironmentPlugin(Object.keys(process.env)),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",

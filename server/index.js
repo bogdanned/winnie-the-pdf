@@ -6,6 +6,7 @@ const app = express()
 
 
 app.use('/', (req, res)=>{
+  console.log(req.params)
   res.send('Hello, is winnie the poh!')
 })
 
