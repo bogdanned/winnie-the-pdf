@@ -10,8 +10,9 @@ app.get('/paragraph', (req, res)=>{
 })
 
 app.post('/paragraph', (req, res)=>{
-  console.log(req, 'req')
+  console.log(req.params, 'req')
   res.json(req.params)
+  res.json(req.body)
   res.send()
 })
 
