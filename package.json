@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/bogdanned/winnie-the-pdf#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "fs": "0.0.1-security",
     "html-webpack-plugin": "^2.30.1",
