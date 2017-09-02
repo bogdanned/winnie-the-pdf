@@ -14,7 +14,6 @@ COPY  .babelrc \
 
 COPY src ./src/
 
-
 EXPOSE 9001
 
 RUN eslint . && \
