@@ -11,12 +11,10 @@ app.use(bodyParser.json()) // for parsing application/json
 
 
 app.get('/paragraph', (req, res)=>{
-  console.log(req.params)
   res.send('Hello, is winnie the poh! Pdf flavored.')
 })
 
 app.get('/paragraph', (req, res)=>{
-  console.log(req.params)
   res.send('Hello, is winnie the poh! Pdf flavored.')
 })
 
