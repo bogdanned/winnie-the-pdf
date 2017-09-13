@@ -21,7 +21,7 @@ app.get('/paragraph', (req, res)=>{
 })
 
 app.get('/*', (req, res)=>{
-  res.sendFile('')
+  res.sendFile(path(__dirname, '../client/index.html' ))
 })
 
 
