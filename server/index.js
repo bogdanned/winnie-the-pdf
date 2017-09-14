@@ -14,18 +14,19 @@ app.get('/paragraph', (req, res)=>{
   res.send('Hello, is winnie the poh! Pdf flavored.')
 })
 
-app.get('/paragraph', (req, res)=>{
+app.get('/api-test', (req, res)=>{
+  const {pdfContent} = req.body
   res.send('Hello, is winnie the poh! Pdf flavored.')
 })
 
-app.get('/*', (req, res)=>{
+app.get('/*', (req, res) => {
   /* Index JS file */
   res.sendFile(path.join(path.dirname(__dirname) + '/client/index.html'))
 })
 
 
 /* Receive title and text of a paragraph */
-app.post('/paragraph', (req, res)=>{
+app.post('/paragraph', (req, res) => {
   const {title, text} = req.body
   const docName = paragraph(title, text)
   res.send(docName)
