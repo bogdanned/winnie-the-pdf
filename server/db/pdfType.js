@@ -1,7 +1,7 @@
 'use strict';
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+import mongoose from 'mongoose'
 
+const Schema = mongoose.Schema
 
 var OfferSchema = new Schema({
   name: {
@@ -29,4 +29,4 @@ var OfferSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('Offers', OfferSchema);
+module.exports = mongoose.model('Offers', Schema);
