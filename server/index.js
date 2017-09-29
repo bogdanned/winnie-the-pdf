@@ -21,9 +21,12 @@ app.get('/api-test', (req, res)=>{
   res.send('Hello, is winnie the poh! Pdf flavored.')
 })
 
-app.get('/login', (res, req) => {
-  res.send('Authentification System')
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(path.dirname(__dirname) + '/client/login.html'))
 })
+
+app.post('/login', passport.authenticate('local', { successRedirect: '/',
+                                                    failureRedirect: '/login' }));
 
 app.get('/', (req, res) => {
   /* Index JS file */
