@@ -3,6 +3,7 @@ import bodyParser from 'body-parser'
 import paragraph from './api/paragraph'
 import path from 'path'
 
+
 const port = 3000
 const app = express()
 
@@ -14,12 +15,17 @@ app.get('/paragraph', (req, res)=>{
   res.send('Hello, is winnie the poh! Pdf flavored.')
 })
 
+
 app.get('/api-test', (req, res)=>{
   const {pdfContent} = req.body
   res.send('Hello, is winnie the poh! Pdf flavored.')
 })
 
-app.get('/*', (req, res) => {
+app.get('/login', (res, req) => {
+  res.send('Authentification System')
+})
+
+app.get('/', (req, res) => {
   /* Index JS file */
   res.sendFile(path.join(path.dirname(__dirname) + '/client/index.html'))
 })
@@ -33,4 +39,4 @@ app.post('/paragraph', (req, res) => {
 })
 
 
-app.listen(port, ()=>(console.log('Server running on port: ' + port)))
+app.listen(port, () => (console.log('Server running on port: ' + port)))
